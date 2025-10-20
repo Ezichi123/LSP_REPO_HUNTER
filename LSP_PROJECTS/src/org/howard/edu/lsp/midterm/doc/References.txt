@@ -1,0 +1,72 @@
+References
+AI-Generated Assistance
+
+The following responses were developed with the support of ChatGPT (GPT-5, OpenAI, October 2025) 
+All AI-generated content was reviewed, edited, and verified for accuracy before submission.
+Full ChatGPT conversations are available below.
+
+Sections supported by ChatGPT:
+
+Question 1 (Cohesion and Arthur Riel Heuristics) — Explanation and refactor analysis for StudentPortalHelper class.
+
+Question 3 (Trim-Level Composition Refactor) — Explanation of inheritance limitations and description of composition-based redesign.
+
+Citation:
+OpenAI. (2025). ChatGPT (GPT-5) [Large language model]. https://chat.openai.com/
+
+Other References
+Riel, A. J. (1996). Object-Oriented Design Heuristics. Addison-Wesley.
+
+Chat GPT Conversation:
+Question 1 – Cohesion and Arthur Riel Heuristics
+
+My Question:
+Given the following, analyze the class below and answer the below questions. Using one or more Arthur Riel heuristics, analyze whether the StudentPortalHelper class demonstrates high or low cohesion.
+(a) Should a well-designed class have high or low cohesion? (5 pts)
+(b) Based on your analysis, discuss—only if you believe changes are needed—how you would reorganize or redesign the class to improve its structure.
+
+ChatGPT Response:
+
+A well-designed class should have high cohesion—each class should capture one key abstraction (Riel).
+
+The StudentPortalHelper class has low cohesion because it mixes unrelated concerns: GPA calculation, CSV export, email formatting, date formatting, payment processing, password security, and caching.
+
+Heuristic violations: “One key abstraction per class,” “Keep related data and behavior together,” “Minimize coupling.”
+
+Refactor recommendation: Split into focused classes such as GpaCalculator, RosterCsvExporter, EmailTemplates, UiDateFormatter, PaymentService, PasswordStrengthChecker, and Cache. Remove static/global state.
+
+Result: Increases cohesion, reduces coupling, and aligns with Riel’s object-oriented design principles.
+
+Question 3 – Trim-Level Refactor
+
+ My Question:
+Explain in detail why the current structure does or does not support changing a car’s trim level during build.
+
+ChatGPT Response:
+
+The structure does not support dynamic trim changes because trim is modeled through inheritance (Base, Sport, Luxury subclasses).
+
+An object’s class in Java is fixed at runtime—a Base car cannot become a Sport car without creating a new object.
+
+Changing trim would require re-instantiation and copying all state, which breaks object identity and increases error risk.
+
+Leads to class explosion (trim × engine combinations) and violates Riel’s heuristic “favor composition over inheritance.”
+
+This violation is the technical reason the design fails—it locks configuration into the type hierarchy.
+
+My Question:
+Describe how to refactor the structure to allow trim-level change for a car to dynamically change. Hint: How would you modify Car to use composition to solve the problem?
+
+ChatGPT Response:
+
+Replace inheritance with composition: make Car a single class that has-a Trim instead of extending multiple trim subclasses.
+
+Define separate Trim classes (BaseTrim, SportTrim, LuxuryTrim) representing configurable behavior and properties.
+
+Car delegates trim-related behavior to its Trim object.
+
+When a customer changes trim, the system simply assigns a new Trim instance to the car—no re-creation needed.
+
+Enables runtime reconfiguration, avoids subclass explosion, and adheres to Riel’s heuristics on cohesion and composition.
+
+
