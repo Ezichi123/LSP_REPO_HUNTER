@@ -1,0 +1,27 @@
+AI Conversation Excerpts
+
+Excerpt 1 – Method Overloading Concept
+
+Prompt: “How can I overload multiple area methods for different shapes in Java?”
+ChatGPT: “Each method should share the same name but differ in parameter type or count. For example, one can accept a double for a circle’s radius, another two doubles for rectangle width and height, and so on. This demonstrates compile-time polymorphism.”
+
+Excerpt 2 – Exception Handling Guidance
+
+Prompt: “What’s the best way to handle invalid dimensions?”
+ChatGPT: “Include validation inside each method. If any dimension is zero or negative, throw an IllegalArgumentException with a clear message. This enforces correct input at runtime.”
+
+Excerpt 3 – Static Invocation and Output Format
+
+Prompt: “How should the Main class call these methods and display results?”
+ChatGPT: “Invoke each method statically using AreaCalculator.area(...) and print the outputs in the specified format. Wrap one test in a try/catch block to demonstrate exception handling.”
+
+Excerpt 4 – Testing and Verification
+
+Prompt: “Can you suggest some test cases to confirm correctness?”
+ChatGPT: “Test valid and invalid values for every shape. Examples include radius = 3.0 (circle), width = 5.0 and height = 2.0 (rectangle), base = 10 and height = 6 (triangle), side = 4 (square), and negative or zero inputs to trigger exceptions.”
+
+
+
+Citations
+
+OpenAI. (2025). ChatGPT (GPT-5) [Large language model]. https://chat.openai.com/
