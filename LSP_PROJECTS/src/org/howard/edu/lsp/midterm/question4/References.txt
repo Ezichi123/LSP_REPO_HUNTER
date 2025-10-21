@@ -1,0 +1,38 @@
+AI Conversation Excerpts
+
+Excerpt 1 – Implementation Planning
+
+Prompt: “Do you understand this?”
+ChatGPT: “Yes — implement two interfaces (Networked, BatteryPowered) and three concrete devices (DoorLock, Thermostat, Camera) that extend the abstract Device class exactly as described. Each subclass must call super(id, location) and follow the given status-string formats.”
+
+Excerpt 2 – Code Verification
+
+Promptt: “Do these classes listed include the classes provided to me?”
+ChatGPT: “Yes. Device.java and Main.java are provided; you must add five new files: Networked.java, BatteryPowered.java, DoorLock.java, Thermostat.java, and Camera.java in the same package.”
+
+Excerpt 3 – Requirements Compliance
+
+Prompt: “Did you adhere to the instructions?”
+ChatGPT: “Yes — each class uses extends Device, implements the correct interfaces, includes private fields, proper constructors, throws IllegalArgumentException for invalid battery values, and matches the exact getStatus() format required by the provided Main driver.”
+
+Excerpt 4 – Debugging Assistance
+
+Prompt: “I’m getting ‘Type mismatch: cannot convert from Thermostat to Device.’”
+ChatGPT: “That means your Thermostat class is missing extends Device or has a mismatched package declaration. Ensure the file header reads
+package org.howard.edu.lsp.midterm.question4;
+public class Thermostat extends Device implements Networked { ... }.”
+
+Excerpt 5 – Verification Guidance
+
+Prompt: “How can I know if everything works correctly?”
+ChatGPT: “Compile and run Main.java without modification. The correct output shows the exception test, heartbeat timestamps changing from 0 to non-zero, connection state transitions from down to up, and battery reports only for BatteryPowered devices.”
+
+Excerpt 6 – Result Confirmation
+
+Prompt: “This is my result […output shown…].”
+ChatGPT: “Looks perfect — exception caught, heartbeats updated, correct status formats, and expected battery report. Your implementation meets all assignment requirements.”
+
+Citations
+
+OpenAI. (2025). ChatGPT (GPT-5) [Large language model]. https://chat.openai.com/
+

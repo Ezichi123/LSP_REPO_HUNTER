@@ -1,0 +1,5 @@
+Device is defined as an abstract class because it represents the shared state and behavior common to all smart-campus 
+devices, but it should not be instantiated on its own. The Networked and BatteryPowered interfaces add modular behaviors—
+network connectivity and battery management—that different devices can implement as needed. This design is not 
+true multiple inheritance; Java classes can only extend one class, but they can implement multiple interfaces to 
+combine behaviors safely without inheriting implementation code.
